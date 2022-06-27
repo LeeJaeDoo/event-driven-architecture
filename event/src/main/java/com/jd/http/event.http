@@ -1,0 +1,61 @@
+### POST review event add
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "type": "REVIEW",
+  "action": "ADD",
+  "reviewId": "840a0658-dc5f-4878-9381-ebb7b2667772",
+  "content": "좋아요!",
+  "attachedPhotoIds": [
+    "e4d1a64e-a531-46de-88d0-ff0ed70c0bb8",
+    "afb0cef2-851d-4a50-bb07-9cc15cbdc332"
+  ],
+  "userId": "4ede0ef2-92b7-4817-a5f3-0c575361f745",
+  "placeId": "9e4baf1c-5acb-4efb-a1af-eddada31b00f"
+}
+
+### POST review event add1
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "type": "REVIEW",
+  "action": "ADD",
+  "reviewId": "940a0658-dc5f-4878-9381-ebb7b2667773",
+  "content": "좋아요!",
+  "attachedPhotoIds": [
+    "e4d1a64e-a531-46de-88d0-ff0ed70c0bb8",
+    "afb0cef2-851d-4a50-bb07-9cc15cbdc332"
+  ],
+  "userId": "959e0ef2-92b7-4817-a5f3-0c575361f744",
+  "placeId": "959baf1c-5acb-4efb-a1af-eddada31b00f"
+}
+
+### POST review event mod
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "type": "REVIEW",
+  "action": "MOD",
+  "reviewId": "990a0658-dc5f-4878-9381-ebb7b2667773",
+  "attachedPhotoIds": [
+    "e4d1a64e-a531-46de-88d0-ff0ed70c0bb8",
+    "afb0cef2-851d-4a50-bb07-9cc15cbdc332"
+  ],
+  "userId": "999e0ef2-92b7-4817-a5f3-0c575361f744",
+  "placeId": "999baf1c-5acb-4efb-a1af-eddada31b00f"
+}
+
+### POST review event delete
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "type": "REVIEW",
+  "action": "DELETE",
+  "reviewId": "340a0658-dc5f-4878-9381-ebb7b2667772",
+  "userId": "3ede0ef2-92b7-4817-a5f3-0c575361f745",
+  "placeId": "2e4baf1c-5acb-4efb-a1af-eddada31b00f"
+}

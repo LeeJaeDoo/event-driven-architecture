@@ -1,0 +1,5 @@
+### GET point history
+GET http://localhost:8081/points/users/3ede0ef2-92b7-4817-a5f3-0c575361f745/total
+
+### GET point history1
+GET http://localhost:8081/points/users/4ede0ef2-92b7-4817-a5f3-0c575361f745/total
