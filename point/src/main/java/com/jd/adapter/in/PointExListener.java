@@ -28,7 +28,7 @@ public class PointExListener implements AcknowledgingMessageListener<String, Obj
 
     @SneakyThrows
     @Override
-    @KafkaListener(topics = "point_review", groupId = "point_1")
+    @KafkaListener(topics = "point_review", groupId = "point_1", containerFactory = "kafkaListenerContainerFactory")
     public void onMessage(ConsumerRecord<String, Object> consumerRecord, Acknowledgment acknowledgment) {
         PointReviewEvent event = consumerRecord.value().toString().toModel(PointReviewEvent.class);
 
