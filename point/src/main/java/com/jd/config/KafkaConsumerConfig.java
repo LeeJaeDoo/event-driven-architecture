@@ -1,7 +1,5 @@
 package com.jd.config;
 
-import com.jd.application.PointException;
-
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
@@ -38,6 +36,8 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getConsumer().getBootstrapServers());
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, kafkaProperties.getConsumer().getKeyDeserializer());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, kafkaProperties.getConsumer().getValueDeserializer());
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, kafkaProperties.getConsumer().getAutoOffsetReset());
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, kafkaProperties.getConsumer().getEnableAutoCommit());
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "point");
         return props;
     }
@@ -56,7 +56,7 @@ public class KafkaConsumerConfig {
             log.error("consumer error, {}", consumerRecord.value(), exception);
         }, new FixedBackOff(1000L, 3L));
 
-        defaultErrorHandler.addNotRetryableExceptions(PointException.class);
+//        defaultErrorHandler.addNotRetryableExceptions(PointException.class, SQLException.class);
 
         return defaultErrorHandler;
     }

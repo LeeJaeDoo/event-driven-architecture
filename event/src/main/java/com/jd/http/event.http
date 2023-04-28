@@ -1,5 +1,5 @@
 ### POST review event add
-POST http://localhost:8080/events
+POST http://localhost:8080/events/users
 Content-Type: application/json
 
 {
